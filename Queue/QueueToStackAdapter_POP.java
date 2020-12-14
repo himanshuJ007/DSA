@@ -9,7 +9,7 @@ import java.util.Queue;
 push Menthod will be 
 
 if minQ size==0 then push to minQ and return                      =====> minQ ="10"  ; helperQ=""
-else minq ko helperQ mai  khali kro then minq mai push kro        =====> minQ="20":helper=10;
+else minq ko helperQ mai  khali kro then minq mai push kro        =====> minQ="20"   ; helper=10;
 then helperQ to minQ mai wapis daal do                            =====> minQ= "20,10" : helperQ=""
 
 Another Iteration
