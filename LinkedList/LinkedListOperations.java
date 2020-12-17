@@ -123,4 +123,77 @@ public class LL {
 
       }
 
+      public void addAt(int idx, int val){
+        // write your code here
+
+        // idx>=0 && idx<=size size bhi include hoga coz last m add ho skta h
+        if(idx>=0 && idx<=size){
+            if(idx==0){
+                addFirst(val);
+            }else if(idx==size){
+                AddLast(val);
+            }else{
+                Node prev =head;
+                for(int i=1;i<idx;i++){
+                    prev= prev.next;
+                }
+                Node nn= new Node ();
+                nn.data= val;
+                nn.next= prev.next;
+                prev.next= nn;
+                size++;
+
+            }
+        }else{
+
+            System.out.println("Invalid arguments");
+            
+        }
+
+      }
+      public void removeLast(){
+        // write your code here
+        if(size==0){
+            System.out.println("List is  empty");
+            return ;
+        }else if(size==1){
+            head= tail = null;
+            size--;
+        }else{
+            Node nn=head;
+            while(nn.next.next!=null){
+                nn=nn.next;
+            }
+            
+            tail=nn;
+            tail.next=null;
+            size--;
+        }
+      }
+      
+      public void removeAt(int idx) {
+        // write your code here
+        if(idx>=0&&idx<size){
+            if(size()==0){
+                System.out.println("List is empty");
+            }else if(idx==0){
+                removeFirst();
+            }else if(idx==size-1){
+                removeLast();
+            }else{
+                Node prev= head;
+                for(int jump=1;jump<idx;jump++){
+                    prev= prev.next;
+                }
+                Node temp= prev.next;
+                prev.next= prev.next.next;
+                temp.next= null;
+                size--;
+            }
+        }else{
+            System.out.println("Invalid arguments");
+        }
+      }
+    }
+
 }
