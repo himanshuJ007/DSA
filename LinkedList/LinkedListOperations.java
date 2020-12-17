@@ -16,11 +16,9 @@ public class LL {
         this.tail = null;
     }
     public int size(){
-        // write code here
         return size;
     }
     public void display(){
-        // write code here
         Node nn= head;
         while(nn!=null){
             System.out.print(nn.data+" ");
@@ -43,7 +41,6 @@ public class LL {
         }
     }
     public void addFirst(int val) {
-        // write your code here
         
         Node nn = new Node();
         nn.data= val;
@@ -56,8 +53,6 @@ public class LL {
         size++; // size increase krna mt bhulna
       }
       public void addAt(int idx, int val){
-        // write your code here
-
         // idx>=0 && idx<=size size bhi include hoga coz last m add ho skta h
         if(idx>=0 && idx<=size){
             if(idx==0){
@@ -82,7 +77,6 @@ public class LL {
       }
     //================================                GET DATA 
       public int getFirst(){
-        // write your code here
         if(size==0){
             System.out.println("List is empty");
             return -1;
@@ -91,7 +85,6 @@ public class LL {
         }
       }
       public int getLast(){
-        // write your code here
         if(size==0){
             System.out.println("List is empty");
             return -1;
@@ -100,7 +93,6 @@ public class LL {
         }
       }
       public int getAt(int idx){
-        // write your code here
         if(idx>=0&&idx<size){
             if(size==0){
                 System.out.println("List is empty");
@@ -130,7 +122,6 @@ public class LL {
         }
       } 
       public void removeLast(){
-        // write your code here
         if(size==0){
             System.out.println("List is  empty");
             return ;
@@ -148,7 +139,6 @@ public class LL {
         }
       }
       public void removeAt(int idx) {
-        // write your code here
         if(idx>=0&&idx<size){
             if(size()==0){
                 System.out.println("List is empty");
