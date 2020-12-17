@@ -1,5 +1,4 @@
 public class LL {
-
     public class Node {
         int data;
         Node next;
@@ -9,16 +8,29 @@ public class LL {
             this.next = null;
         }
     }
-
     Node head;
     Node tail;
     int size;
-
     LL() {
         this.head = null;
         this.tail = null;
     }
-    
+    public int size(){
+        // write code here
+        return size;
+    }
+    public void display(){
+        // write code here
+        Node nn= head;
+        while(nn!=null){
+            System.out.print(nn.data+" ");
+            nn=nn.next;
+        }
+        System.out.println();
+
+        
+      }
+    //================================                ADDITION 
     public void AddLast(int val){
         Node nn = new Node();
         nn.data= val;
@@ -30,84 +42,7 @@ public class LL {
             tail=nn;
         }
     }
-
-    public int size(){
-        // write code here
-        return size;
-      }
-  
-      public void display(){
-        // write code here
-        Node nn= head;
-        while(nn!=null){
-            System.out.print(nn.data+" ");
-            nn=nn.next;
-        }
-        System.out.println();
-
-        
-      }
-
-      public void removeFirst(){
-        // write your code here
-
-        if(size==0){
-            System.out.println("List is empty");
-            return;
-        }else{
-            Node nn = head;
-            head= head.next;
-            nn.next= null;
-            size--;
-        }
-
-      }
-
-      public int getFirst(){
-        // write your code here
-        if(size==0){
-            System.out.println("List is empty");
-            return -1;
-        }else{
-            return head.data;
-        }
-        
-
-      }
-  
-      public int getLast(){
-        // write your code here
-        if(size==0){
-            System.out.println("List is empty");
-            return -1;
-        }else{
-            return tail.data;
-        }
-
-      }
-  // 1->2->3->4
-      public int getAt(int idx){
-        // write your code here
-        if(idx>=0&&idx<size){
-            if(size==0){
-                System.out.println("List is empty");
-                return -1;
-            }else{
-                Node nn= head;
-                for(int i=0;i<idx;i++){
-                    nn=nn.next;
-                }
-                return nn.data;
-            }
-        }else{
-
-            System.out.println("Invalid arguments");
-            return -1;
-        }
-        
-      }
-
-      public void addFirst(int val) {
+    public void addFirst(int val) {
         // write your code here
         
         Node nn = new Node();
@@ -119,10 +54,7 @@ public class LL {
             head= nn;
         }
         size++; // size increase krna mt bhulna
-       
-
       }
-
       public void addAt(int idx, int val){
         // write your code here
 
@@ -145,12 +77,58 @@ public class LL {
 
             }
         }else{
-
-            System.out.println("Invalid arguments");
-            
+            System.out.println("Invalid arguments");   
         }
-
       }
+    //================================                GET DATA 
+      public int getFirst(){
+        // write your code here
+        if(size==0){
+            System.out.println("List is empty");
+            return -1;
+        }else{
+            return head.data;
+        }
+      }
+      public int getLast(){
+        // write your code here
+        if(size==0){
+            System.out.println("List is empty");
+            return -1;
+        }else{
+            return tail.data;
+        }
+      }
+      public int getAt(int idx){
+        // write your code here
+        if(idx>=0&&idx<size){
+            if(size==0){
+                System.out.println("List is empty");
+                return -1;
+            }else{
+                Node nn= head;
+                for(int i=0;i<idx;i++){
+                    nn=nn.next;
+                }
+                return nn.data;
+            }
+        }else{
+            System.out.println("Invalid arguments");
+            return -1;
+        } 
+      }
+    //================================                REMOVE ELEMENTS
+      public void removeFirst(){
+        if(size==0){
+            System.out.println("List is empty");
+            return;
+        }else{
+            Node nn = head;
+            head= head.next;
+            nn.next= null;
+            size--;
+        }
+      } 
       public void removeLast(){
         // write your code here
         if(size==0){
@@ -163,14 +141,12 @@ public class LL {
             Node nn=head;
             while(nn.next.next!=null){
                 nn=nn.next;
-            }
-            
+            } 
             tail=nn;
             tail.next=null;
             size--;
         }
       }
-      
       public void removeAt(int idx) {
         // write your code here
         if(idx>=0&&idx<size){
