@@ -28,6 +28,7 @@ public class LL {
 
         
       }
+
     //================================                ADDITION 
     public void AddLast(int val){
         Node nn = new Node();
@@ -52,29 +53,29 @@ public class LL {
         }
         size++; // size increase krna mt bhulna
       }
-      public void addAt(int idx, int val){
-        // idx>=0 && idx<=size size bhi include hoga coz last m add ho skta h
-        if(idx>=0 && idx<=size){
-            if(idx==0){
-                addFirst(val);
-            }else if(idx==size){
-                AddLast(val);
-            }else{
-                Node prev =head;
-                for(int i=1;i<idx;i++){
-                    prev= prev.next;
-                }
-                Node nn= new Node ();
-                nn.data= val;
-                nn.next= prev.next;
-                prev.next= nn;
-                size++;
-
-            }
+    public void addAt(int idx, int val){
+    // idx>=0 && idx<=size size bhi include hoga coz last m add ho skta h
+    if(idx>=0 && idx<=size){
+        if(idx==0){
+            addFirst(val);
+        }else if(idx==size){
+            AddLast(val);
         }else{
-            System.out.println("Invalid arguments");   
+            Node prev =head;
+            for(int i=1;i<idx;i++){
+                prev= prev.next;
+            }
+            Node nn= new Node ();
+            nn.data= val;
+            nn.next= prev.next;
+            prev.next= nn;
+            size++;
+
         }
-      }
+    }else{
+        System.out.println("Invalid arguments");   
+    }
+    }
     //================================                GET DATA 
       public int getFirst(){
         if(size==0){
