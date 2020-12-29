@@ -161,6 +161,75 @@ public class LL {
             System.out.println("Invalid arguments");
         }
       }
+    // Reverse Data Iterative 
+
+        public void rhelper(int i ,Node node ){
+        if(i>=size){
+            return;
+        }
+        rhelper(i+1,node.next);
+        if(i>=size/2){
+            
+            int temp = right.data;
+            right.data=node.data;
+            node.data= temp;
+
+            right=right.next;
+
+        }
+
+    } 
+    
+    public static Node right; 
+    public void reverseDI() {
+          right =head;
+          rhelper(0,right);
+            // write your code here
+
+    }
+
+    public void rphelper(int i,Node node){
+        if(i==size-1){
+            return;
+        }
+        rphelper(i+1,node.next);
+
+        node.next.next= node ;
+
+    }
+
+    public void reversePI() {
+
+            // write your code here
+            rphelper(0,head);
+            //head=null;  
+            //itna hi kr ke chode dia 
+            //tha head and tail ko swap bhi krna hota h end mai
+
+            Node temp=tail;
+            head.next=null;
+            tail=head;
+            head=temp;
+    }
+
+    
+    public int mid() {
+            // write your code 
+            Node temp= head;
+            int i=0;
+            if(size%2==0){
+                while(i!=(size/2)-1){
+                    temp=temp.next;
+                }
+                return temp.next.data;
+            }else{
+                while(i!=(size/2)-1){
+                    temp=temp.next;
+                }
+                return temp.next.data;
+
+            }
+        }
     }
 
 }
