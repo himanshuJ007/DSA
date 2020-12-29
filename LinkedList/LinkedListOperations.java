@@ -213,20 +213,22 @@ public class LL {
     }
 
     
-    public int mid() {
+        public int mid() {
             // write your code 
             Node temp= head;
             int i=0;
             if(size%2==0){
                 while(i!=(size/2)-1){
                     temp=temp.next;
+                    i++;
                 }
-                return temp.next.data;
+                return temp.data;
             }else{
-                while(i!=(size/2)-1){
+                while(i!=(size/2)){
                     temp=temp.next;
+                    i++;
                 }
-                return temp.next.data;
+                return temp.data;
 
             }
         }
