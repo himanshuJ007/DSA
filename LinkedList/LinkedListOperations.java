@@ -212,7 +212,7 @@ public class LL {
             head=temp;
     }
 
-    
+    // mid of a LL
         public int mid() {
             // write your code 
             Node temp= head;
@@ -231,6 +231,51 @@ public class LL {
                 return temp.data;
 
             }
+        }
+
+        // Find misddle of LL without using size property and in 1 iteration
+
+        public int mid() {
+            // write your code 
+            Node slow= head;
+            Node fast= head;
+            
+            if(size%2==0){
+                while(fast.next.next!=null){
+                    slow=slow.next;
+                    fast=fast.next.next;
+                    
+                }
+                return slow.data;
+            }else{
+                 while(fast.next!=null){
+                    slow=slow.next;
+                    fast=fast.next.next;
+                    
+                }
+                return slow.data;
+
+            }
+        }
+
+        public int kthFromLast(int k) {
+            // write your code here
+            Node slow = head;
+            Node fast= head;
+            while(k>0){
+                fast=fast.next;
+                k--;
+            }
+            //while mai fast !=null nhi rakh skte
+            //warna sb ek aage shift ho jainge  ie., fast tail se aagenikal jayega
+            //or slow bhi ek position aage 
+            while(fast!=tail){
+
+                slow=slow.next;
+                fast=fast.next;
+            }
+            
+            return slow.data;
         }
     }
 
